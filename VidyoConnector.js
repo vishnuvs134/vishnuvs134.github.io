@@ -13,9 +13,10 @@ function StartVidyoConnector(VC, useTranscodingWebRTC, performMonitorShare, webr
     var microphonePrivacy = false;
     var speakerPrivacy = false;
 
-    window.onresize = function()
-    {
-        ShowRenderer(vidyoConnector);
+    window.onresize = function() {
+        if (vidyoConnector) {
+            ShowRenderer(vidyoConnector);
+        }
     };
     
     window.onbeforeunload = function() {
